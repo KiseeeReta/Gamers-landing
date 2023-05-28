@@ -1,0 +1,95 @@
+.sidebar
+  background-color: $color-green-dark
+  grid-column: 1 / 2
+  grid-row: 1 / -1
+  padding-top: 3.7rem
+  display: flex
+  justify-content: center
+  @include respond(tab-land)
+    grid-row: 1 / 2
+    grid-column: 1 / -1
+    justify-content: end
+    align-items: center
+    padding: 0 4rem 0 0
+
+.navigation
+  &__toggle
+    display: none
+  &__icon
+    position: relative
+    top: 2.5rem
+    background-color: $color-gray-light
+    height: .2rem
+    width: 4.5rem
+    z-index: 6
+    @include respond(tab-land)
+      top: 0.4rem
+      right: -1.9rem
+    &::before, &::after
+      display: block
+      content: ""
+      background-color: $color-gray-light
+      height: .2rem
+      width: 4.5rem
+    &::before
+      transform: translateY(-1.5rem)
+    &::after
+      transform: translateY(1.5rem)
+  &__button
+    display: block
+    background-color: $color-green-dark
+    cursor: pointer
+    height: 7rem
+    width: 7rem
+    position: absolute
+    top: 3rem
+    left: .5rem
+    z-index: 5
+    @include respond(tab-land)
+      height: 5.5rem
+      width: 5.5rem
+      top: .2rem
+      left: 95%
+  &__background
+    width: 45rem
+    height: 50rem
+    background: $color-green-dark
+    position: absolute
+    top: 0rem
+    left: 0rem
+    z-index: 1
+    transform: translateX(-100%)
+    transition: all .5s
+    @include respond(phone)
+      width: 45rem
+      height: 60rem
+  &__nav
+    position: absolute
+    top: 0
+    left: 0
+    width: 30%
+    height: 30%
+    z-index: 3
+    transform: translateX(-200%)
+    transition: all .5s
+  &__list
+    transform: translate(12rem, 5rem)
+    list-style: none
+  &__link
+    &:link, &:visited
+      display: inline-block
+      text-decoration: none
+      text-transform: uppercase
+      font-size: 1.6rem
+      font-weight: 300
+      color: white
+      line-height: 8rem
+      transition: all .5s
+      @include respond(phone)
+        font-size: 1.4rem
+    &:hover
+      transform: translateY(-.3rem)
+  &__toggle:checked ~ &__background
+    transform: translateX(0%)
+  &__toggle:checked ~ &__nav
+    transform: translateX(0%)

@@ -1,0 +1,14 @@
+{
+  "name": "praktic-grid",
+  "version": "1.0.1",
+  "description": "My practic",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass src/sass/style.sass src/css/style.css -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^9.0.0"
+  }
+}
